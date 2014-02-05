@@ -21,9 +21,9 @@
 
 7. Initialize the OrchestratorJSClient:
 
-```chsharp
+    ```chsharp
     orchestratorJSClient = new OrchestratorJSClient.OrchestratorJSClient(deviceIdentity); 
-```
+    ```
 
 8. Register your call back - the one where you handle the commands from the orchestrator.js server:
 
@@ -60,7 +60,7 @@
 This way you ensure that the Internet connection is up when you try to connect to the orchestrator. 
 The initialization can be done e.g. with OrchestratorJSClient's helper like this:
 
-```csharp
+    ```csharp
     // init wifi and register callback
     WiFiRS9110 wifi = wifi_RS21.Interface;
     wifi.WirelessConnectivityChanged += new WiFiRS9110.WirelessConnectivityChangedEventHandler((s, e) => {
@@ -68,7 +68,7 @@ The initialization can be done e.g. with OrchestratorJSClient's helper like this
     });
     OrchestratorJSClient.GeneralHelpers.initWiFi(wifi, ssid, passwd);
 
-```
+    ```
 10. After this your gadget should be able to communicate orchestrator.js server!
 
 
