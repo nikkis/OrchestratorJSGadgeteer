@@ -7,26 +7,26 @@ orchestrator.js .NET Gadgeteer client
 How to use
 ----------
 
-0. Download OrchestratorJSGadgeteer and unzip it.
-1. Create a new Gadgeteer project e.g. CoffeeMachine
-2. Select your Gadgeteer board e.g. spider 1
+1. Download OrchestratorJSGadgeteer and unzip it.
+2. Create a new Gadgeteer project e.g. CoffeeMachine
+3. Select your Gadgeteer board e.g. spider 1
 
-3. Add at least power and wifi modules to your board
+4. Add at least power and wifi modules to your board
 
-4. Add the OrchestratorJSClient to your solution: 
+5. Add the OrchestratorJSClient to your solution: 
 	- Right-click your _SOLUTION_ -> add -> Existing Project
 	- Find OrchestratorJSClient project file and add it
 
-5. Add reference to your project: 
+6. Add reference to your project: 
 	- Right-click your _PROJECT_ -> Add References and select from projects tab the OrchestratorJSClient
 
-6. Initialize the OrchestratorJSClient:
+7. Initialize the OrchestratorJSClient:
 
 ```chsharp
     orchestratorJSClient = new OrchestratorJSClient.OrchestratorJSClient(deviceIdentity); 
 ```
 
-7. Register your call back - the one where you handle the commands from the orchestrator.js server:
+8. Register your call back - the one where you handle the commands from the orchestrator.js server:
 
 ```chsharp
     orchestratorJSClient.MethodCallReceived += new OrchestratorJSClient.OrchestratorJSClient.OnMethodCallRecivedHandler((e) => {
@@ -56,7 +56,7 @@ How to use
     });    
 ```
 
-8. Initialize your wifi and in wifi's connectivityChanged handler connect to orchestrator.js server. 
+9. Initialize your wifi and in wifi's connectivityChanged handler connect to orchestrator.js server. 
 This way you ensure that the Internet connection is up when you try to connect to the orchestrator. 
 The initialization can be done e.g. with OrchestratorJSClient's helper like this:
 ```csharp
@@ -67,7 +67,7 @@ The initialization can be done e.g. with OrchestratorJSClient's helper like this
     });
     OrchestratorJSClient.GeneralHelpers.initWiFi(wifi, ssid, passwd);
 ```
-9. After this your gadget should be able to communicate orchestrator.js server!
+10. After this your gadget should be able to communicate orchestrator.js server!
 
 
 Example Program.cs
