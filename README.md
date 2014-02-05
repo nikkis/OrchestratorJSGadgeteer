@@ -12,10 +12,12 @@ How to use
 
 3. Add atleast power and wifi modules to your board
 
-4. Add the OrchestratorJSClient to your solution: right-click your _SOLUTION_ -> add -> Existing Project
-	- find OrchestratorJSClient project file and add it
+4. Add the OrchestratorJSClient to your solution: 
+	- Right-click your _SOLUTION_ -> add -> Existing Project
+	- Find OrchestratorJSClient project file and add it
 
-5. Add reference to your project: right-click your _PROJECT_ -> Add References and select from projects tab the OrchestratorJSClient
+5. Add reference to your project: 
+	- Right-click your _PROJECT_ -> Add References and select from projects tab the OrchestratorJSClient
 
 6. Initialize the OrchestratorJSClient:
 
@@ -64,7 +66,7 @@ The initialization can be done e.g. with OrchestratorJSClient's helper like this
     });
     OrchestratorJSClient.GeneralHelpers.initWiFi(wifi, ssid, passwd);
 ```
-9. After this the client should be good to go!
+9. After this your gadget should be able to communicate orchestrator.js server!
 
 
 Example Program.cs
