@@ -28,7 +28,7 @@
 8. Register your call back - the one where you handle the commands from the orchestrator.js server:
 
 
-```chsharp
+    ```chsharp
     orchestratorJSClient.MethodCallReceived += new OrchestratorJSClient.OrchestratorJSClient.OnMethodCallRecivedHandler((e) => {
         if ( e.capabilityName== "MulticolorLed" && e.methodCallName == "blue")
         {
@@ -54,7 +54,7 @@
         }
         orchestratorJSClient.sendResponse();
     });    
-```
+    ```
 
 9. Initialize your wifi and in wifi's connectivityChanged handler connect to orchestrator.js server. 
 This way you ensure that the Internet connection is up when you try to connect to the orchestrator. 
