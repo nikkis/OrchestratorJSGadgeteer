@@ -4,7 +4,7 @@ using GHI.Premium.Net;
 
 namespace OrchestratorJSClient
 {
-    class GeneralHelpers
+    public class GeneralHelpers
     {
 
         public static void initWiFi(WiFiRS9110 wifi, String ssid, String passphrase)

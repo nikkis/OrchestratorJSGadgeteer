@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace OrchestratorJSClient
 {
-    class OrchestratorJSClient : SocketIOClient
+    public class OrchestratorJSClient : SocketIOClient
     {
 
         private string clientIdentity_;
