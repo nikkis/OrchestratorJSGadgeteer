@@ -13,7 +13,7 @@ How to use
 3. Add atleast power and wifi modules to your board
 
 4. Add the OrchestratorJSClient to your solution: right-click your _SOLUTION_ -> add -> Existing Project
-- find OrchestratorJSClient project file and add it
+	- find OrchestratorJSClient project file and add it
 
 5. Add reference to your project: right-click your _PROJECT_ -> Add References and select from projects tab the OrchestratorJSClient
 
