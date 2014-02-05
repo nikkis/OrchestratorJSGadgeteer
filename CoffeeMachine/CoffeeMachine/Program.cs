@@ -45,7 +45,7 @@ namespace CoffeeMachine
             orchestratorJSClient = new OrchestratorJSClient.OrchestratorJSClient(deviceIdentity); 
 
             // register handler for listening method calls from orchestrator
-            orchestratorJSClient.MethodCallReceived += new OrchestratorJSClient.OrchestratorJSClient.OnMethodCallRecivedHandler((e) => {
+            orchestratorJSClient.MethodCallReceived += new OrchestratorJSClient.OrchestratorJSClient.OnMethodCallRecievedHandler((e) => {
                 if ( e.capabilityName== "MulticolorLed" && e.methodCallName == "blue")
                 {
                     multicolorLed.RemoveGreen();

@@ -42,7 +42,7 @@ namespace OrchestratorJSClient
             orchestratorJSClient = new OrchestratorJSClient(deviceIdentity);
 
             // register handler for listening method calls from orchestrator
-            orchestratorJSClient.MethodCallReceived += new OrchestratorJSClient.OnMethodCallRecivedHandler(ojs_client_MethodCallReceived);
+            orchestratorJSClient.MethodCallReceived += new OrchestratorJSClient.OnMethodCallRecievedHandler(ojs_client_MethodCallReceived);
 
             Debug.Print("Program Initialized");
         }

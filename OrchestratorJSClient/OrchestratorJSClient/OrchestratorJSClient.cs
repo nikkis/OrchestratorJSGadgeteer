@@ -151,8 +151,8 @@ namespace OrchestratorJSClient
 
 
 
-        public delegate void OnMethodCallRecivedHandler(OrchestratorJSEventArgs e);
-        public event OnMethodCallRecivedHandler MethodCallReceived;
+        public delegate void OnMethodCallRecievedHandler(OrchestratorJSEventArgs e);
+        public event OnMethodCallRecievedHandler MethodCallReceived;
 
 
         private string currentActionId;
