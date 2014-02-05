@@ -1,10 +1,10 @@
-orchestrator.js .NET Gadgeteer client
+#orchestrator.js .NET Gadgeteer client
 =====================================
 
 
 
 
-How to use
+##How to use
 ----------
 
 1. Download OrchestratorJSGadgeteer and unzip it.
@@ -55,7 +55,6 @@ How to use
         orchestratorJSClient.sendResponse();
     });    
 ```
-
 9. Initialize your wifi and in wifi's connectivityChanged handler connect to orchestrator.js server. 
 This way you ensure that the Internet connection is up when you try to connect to the orchestrator. 
 The initialization can be done e.g. with OrchestratorJSClient's helper like this:
@@ -70,7 +69,7 @@ The initialization can be done e.g. with OrchestratorJSClient's helper like this
 10. After this your gadget should be able to communicate orchestrator.js server!
 
 
-Example Program.cs
+##Example Program.cs
 ------------------
 
 ```csharp
