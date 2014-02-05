@@ -7,10 +7,11 @@ orchestrator.js .NET Gadgeteer client
 How to use
 ----------
 
+0. Download OrchestratorJSGadgeteer and unzip it.
 1. Create a new Gadgeteer project e.g. CoffeeMachine
 2. Select your Gadgeteer board e.g. spider 1
 
-3. Add atleast power and wifi modules to your board
+3. Add at least power and wifi modules to your board
 
 4. Add the OrchestratorJSClient to your solution: 
 	- Right-click your _SOLUTION_ -> add -> Existing Project
