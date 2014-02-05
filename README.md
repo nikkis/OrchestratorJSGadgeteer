@@ -5,7 +5,6 @@
 
 
 ##How to use
-----------
 
 1. Download OrchestratorJSGadgeteer and unzip it.
 2. Create a new Gadgeteer project e.g. CoffeeMachine
@@ -27,6 +26,7 @@
 ```
 
 8. Register your call back - the one where you handle the commands from the orchestrator.js server:
+
 
 ```chsharp
     orchestratorJSClient.MethodCallReceived += new OrchestratorJSClient.OrchestratorJSClient.OnMethodCallRecivedHandler((e) => {
@@ -55,9 +55,11 @@
         orchestratorJSClient.sendResponse();
     });    
 ```
+
 9. Initialize your wifi and in wifi's connectivityChanged handler connect to orchestrator.js server. 
 This way you ensure that the Internet connection is up when you try to connect to the orchestrator. 
 The initialization can be done e.g. with OrchestratorJSClient's helper like this:
+
 ```csharp
     // init wifi and register callback
     WiFiRS9110 wifi = wifi_RS21.Interface;
@@ -65,12 +67,12 @@ The initialization can be done e.g. with OrchestratorJSClient's helper like this
         orchestratorJSClient.connect(host, port);
     });
     OrchestratorJSClient.GeneralHelpers.initWiFi(wifi, ssid, passwd);
+
 ```
 10. After this your gadget should be able to communicate orchestrator.js server!
 
 
 ##Example Program.cs
-------------------
 
 ```csharp
 using System;
