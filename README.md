@@ -22,7 +22,7 @@ How to use
     orchestratorJSClient = new OrchestratorJSClient.OrchestratorJSClient(deviceIdentity); 
 
 - Register your call back - the one where you handle the commands from the orchestrator.js server:
-   
+```chsharp   
     orchestratorJSClient.MethodCallReceived += new OrchestratorJSClient.OrchestratorJSClient.OnMethodCallRecivedHandler((e) => {
         if ( e.capabilityName== "MulticolorLed" && e.methodCallName == "blue")
         {
@@ -48,18 +48,19 @@ How to use
         }
         orchestratorJSClient.sendResponse();
     });    
-
+```
 
 - Initialize your wifi and in wifi's connectivityChanged handler connect to orchestrator.js server. 
 This way you ensure that the Internet connection is up when you try to connect to the orchestrator. 
 The initialization can be done e.g. with OrchestratorJSClient's helper like this:
+```csharp
     // init wifi and register callback
     WiFiRS9110 wifi = wifi_RS21.Interface;
     wifi.WirelessConnectivityChanged += new WiFiRS9110.WirelessConnectivityChangedEventHandler((s, e) => {
         orchestratorJSClient.connect(host, port);
     });
     OrchestratorJSClient.GeneralHelpers.initWiFi(wifi, ssid, passwd);
-
+```
 - After this the client should be good to go!
 
 
