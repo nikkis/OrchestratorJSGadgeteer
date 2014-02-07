@@ -32,6 +32,7 @@ namespace CoffeeMachine
         [System.SerializableAttribute()]
         internal enum FontResources : short
         {
+            moireFonts = -18202,
             small = 13070,
             NinaB = 18060,
         }

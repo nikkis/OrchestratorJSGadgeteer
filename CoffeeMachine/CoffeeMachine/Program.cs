@@ -58,6 +58,8 @@ namespace CoffeeMachine
         
         private GT.Timer timeUntilCoffeeReadyTimer;
         private int timeUntilCoffeeReady;
+        private Text timerText;
+        private int COFFEE_MAKE_TIME = 300;
         
 
         // This method is run when the mainboard is powered up or reset.   
@@ -87,6 +89,8 @@ namespace CoffeeMachine
                 coffeeMachineOn();
             });
 
+            coffeeRelay.TurnOn();
+
             // init wifi and register callback
             WiFiRS9110 wifi = wifi_RS21.Interface;
             wifi.WirelessConnectivityChanged += new WiFiRS9110.WirelessConnectivityChangedEventHandler((s, e) =>
@@ -102,26 +106,31 @@ namespace CoffeeMachine
             orchestratorJSClient.MethodCallReceived += new OrchestratorJSClient.OrchestratorJSClient.OnMethodCallRecievedHandler((e) =>
             {
 
+                Program.BeginInvoke(new DispatcherOperationCallback(delegate
+                {
+  
+                
+
                 if ( e.capabilityName == "CoffeeCapability" && e.methodCallName == "makeCoffee" )
                 {
                     orchestratorJSClient.sendResponse( coffeeMachineOn() );
-                    return;
+                    return null;
                 }
                 else if (e.capabilityName == "CoffeeCapability" && e.methodCallName == "turnOff")
                 {
                     // turn the machine of (also called after n. minutes)
                     orchestratorJSClient.sendResponse(coffeeMachineOff());
-                    return;
+                    return null;
                 }
                 else if ( e.capabilityName == "CoffeeCapability" && e.methodCallName == "isLoaded" )
                 {
                     orchestratorJSClient.sendResponse( ( coffeeMachineState == CoffeeMachineState.LOADED ) );
-                    return;
+                    return null;
                 }
                 else if ( e.capabilityName == "CoffeeCapability" && e.methodCallName == "isOn" )
                 {
                     orchestratorJSClient.sendResponse( ( coffeeMachineState == CoffeeMachineState.ON ) );
-                    return;
+                    return null;
 
                 }
                 else if (e.capabilityName == "CoffeeCapability" && e.methodCallName == "isCoffeeReady")
@@ -131,13 +140,13 @@ namespace CoffeeMachine
                     {
                         Debug.Print("Coffee was READY!");
                         orchestratorJSClient.sendResponse(true);
-                        return;
+                        return null;
                     }
                     else 
                     {
                         Debug.Print("Coffee is NOT READY yet!");
                         orchestratorJSClient.sendResponse(false);
-                        return;
+                        return null;
                     }
 
                 }
@@ -146,6 +155,11 @@ namespace CoffeeMachine
                     Debug.Print("unknown capability and/or method");
                 }
                 orchestratorJSClient.sendResponse();
+
+                        return null;
+                }), "");
+
+
             });
         }
 
@@ -158,25 +172,31 @@ namespace CoffeeMachine
             coffeeMachineState = CoffeeMachineState.ON;
 
             // This is needed as the the command may come from orchestrator.js, end hence is run in different thread!
-            Program.BeginInvoke(new DispatcherOperationCallback(delegate
-            {
+            //Program.BeginInvoke(new DispatcherOperationCallback(delegate
+            //{
                 onBtnBorder.Background = selectedONAndLoadedBackgroundBrush;
                 offBtnBorder.Background = unselectedBackgroundBrush;
                 loadedBtnBorder.Background = unselectedBackgroundBrush;
-                return null;
-            }), "");
 
-            timeUntilCoffeeReady = 10;
-            timeUntilCoffeeReadyTimer = new GT.Timer(1000);
-            timeUntilCoffeeReadyTimer.Tick += new GT.Timer.TickEventHandler((timer) =>
-            {
-                timeUntilCoffeeReady -= 1;
-                if (timeUntilCoffeeReady < 0) { timeUntilCoffeeReadyTimer.Stop(); }
-            });
-            timeUntilCoffeeReadyTimer.Start();
+                timeUntilCoffeeReady = COFFEE_MAKE_TIME;
+                timeUntilCoffeeReadyTimer = new GT.Timer(1000);
+                timeUntilCoffeeReadyTimer.Tick += new GT.Timer.TickEventHandler((timer) =>
+                {
+                    if (timeUntilCoffeeReady == 0)
+                        timerText.TextContent = "coffee ready";
+                    else
+                        timerText.TextContent = "" + timeUntilCoffeeReady;
+                    timeUntilCoffeeReady -= 1;
+                    if (timeUntilCoffeeReady < 0) { timeUntilCoffeeReadyTimer.Stop(); }
+                });
+                timeUntilCoffeeReadyTimer.Start();
 
-            // the actual functionality
-            multicolorLed.AddGreen();
+                // the actual functionality
+                coffeeRelay.TurnOff();
+
+            //    return null;
+            //}), "");
+
             return true;
         }
 
@@ -189,17 +209,22 @@ namespace CoffeeMachine
             coffeeMachineState = CoffeeMachineState.OFF;
 
             // This is needed as the the command may come from orchestrator.js, end hence is run in different thread!
-            Program.BeginInvoke(new DispatcherOperationCallback(delegate
-            {
+            //Program.BeginInvoke(new DispatcherOperationCallback(delegate
+            //{
                 offBtnBorder.Background = selectedOFFBackgroundBrush;
                 onBtnBorder.Background = unselectedBackgroundBrush;
                 loadedBtnBorder.Background = unselectedBackgroundBrush;
-                return null;
-            }), "");
+
+                timeUntilCoffeeReadyTimer.Stop();
+                timerText.TextContent = "off";
+
+                // the actual functionality
+                coffeeRelay.TurnOn();
+
+            //    return null;
+            //}), "");
 
 
-            // the actual functionality
-            multicolorLed.RemoveGreen();
             return false;
         }
 
@@ -217,8 +242,12 @@ namespace CoffeeMachine
             onBtnBorder.Background = unselectedBackgroundBrush;
             loadedBtnBorder.Background = selectedONAndLoadedBackgroundBrush;
 
+            timeUntilCoffeeReadyTimer.Stop();
+            timerText.TextContent = "loaded";
+            
+
             // the actual functionality
-            multicolorLed.RemoveGreen();
+            coffeeRelay.TurnOn();
         }
 
 
@@ -236,7 +265,7 @@ namespace CoffeeMachine
             Debug.Print("gyro state, x: " + sensorData.X + ", y: " + sensorData.Y + ", z: " + sensorData.Z);
             if (System.Math.Abs(sensorData.Y) > 20)
             {
-                multicolorLed.AddBlue();
+                
                 // ask user if the machine has just been loaded
 
 
@@ -335,10 +364,16 @@ namespace CoffeeMachine
             StackPanel verticalStack = new StackPanel(Orientation.Vertical);
             verticalStack.Children.Add(stack);
 
-            Text timerText = new Text(font, "off");
+
+
+
+            Font ff = Resources.GetFont(Resources.FontResources.moireFonts);
+
+            timerText = new Text(ff, "off");
             timerText.Width = 320;
             timerText.ForeColor = GT.Color.FromRGB(89, 192, 255);
             timerText.TextAlignment = TextAlignment.Center;
+            timerText.SetMargin(0, 35, 0, 0);
             verticalStack.Children.Add(timerText);
 
             canvas.Children.Add(verticalStack);

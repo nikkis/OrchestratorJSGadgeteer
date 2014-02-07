@@ -54,9 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Gadgeteer" />
-    <Reference Include="Gadgeteer.DaisyLink, Version=2.42.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="Gadgeteer.WebClient, Version=2.42.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -75,7 +72,7 @@
     <Reference Include="GTM.GHIElectronics.Display_T35, Version=4.2.101.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="GTM.GHIElectronics.MulticolorLed, Version=4.2.101.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="GTM.GHIElectronics.Relay_X1, Version=4.2.101.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="GTM.GHIElectronics.UsbClientDP, Version=4.2.101.0, Culture=neutral, processorArchitecture=MSIL">
@@ -105,6 +102,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="moireFonts.tinyfnt" />
     <None Include="Program.gadgeteer">
       <Generator>GadgeteerFileCodeGenerator</Generator>
       <LastGenOutput>Program.generated.cs</LastGenOutput>
