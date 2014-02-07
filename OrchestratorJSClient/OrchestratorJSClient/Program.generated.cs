@@ -21,7 +21,7 @@ namespace OrchestratorJSClient {
         /// <summary>The WiFi_RS21 (Premium) module using socket 9 of the mainboard.</summary>
         private Gadgeteer.Modules.GHIElectronics.WiFi_RS21 wifi_RS21;
         
-        /// <summary>The MulticolorLed module using socket 12 of the mainboard.</summary>
+        /// <summary>The MulticolorLed module using socket 11 of the mainboard.</summary>
         private Gadgeteer.Modules.GHIElectronics.MulticolorLed multicolorLed;
         
         /// <summary>This property provides access to the Mainboard API. This is normally not necessary for an end user program.</summary>
@@ -48,7 +48,7 @@ namespace OrchestratorJSClient {
         private void InitializeModules() {
             this.usbClientDP = new GTM.GHIElectronics.UsbClientDP(1);
             this.wifi_RS21 = new GTM.GHIElectronics.WiFi_RS21(9);
-            this.multicolorLed = new GTM.GHIElectronics.MulticolorLed(12);
+            this.multicolorLed = new GTM.GHIElectronics.MulticolorLed(11);
         }
     }
 }

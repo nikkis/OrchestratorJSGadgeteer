@@ -60,8 +60,8 @@
           <moduleHasSocketUses Id="74dd10c7-9bee-476d-8d72-7cd7846c0ca8">
             <socketUse Id="bc7cd69b-07ad-4723-99e9-6d95d0e6923f" label="XY*">
               <socket>
-                <socketUseReferencesSocket Id="ce0b67dc-7773-49d7-aa2a-76196c3e97fa">
-                  <socketMoniker Id="9ffc9f35-73ca-4f39-a1ee-7cdea3713ea7" />
+                <socketUseReferencesSocket Id="1950b8ba-f297-4537-899e-7d1e7979f67e">
+                  <socketMoniker Id="3ddb0cbf-547d-46c3-9303-484b6175c22b" />
                 </socketUseReferencesSocket>
               </socket>
             </socketUse>
@@ -92,6 +92,78 @@
               <socket>
                 <socketUseReferencesSocket Id="70cad0af-f6ab-4f0a-bd24-ef3a9caaa306">
                   <socketMoniker Id="f272c66f-6af2-4ff8-a3f9-53eecc545eaf" />
+                </socketUseReferencesSocket>
+              </socket>
+            </socketUse>
+          </moduleHasSocketUses>
+        </socketUses>
+      </module>
+    </gadgeteerModelHasGadgeteerHardware>
+    <gadgeteerModelHasGadgeteerHardware Id="340bca9c-5527-4bdc-b32f-b650a8678566">
+      <module Id="d8f21dbd-a68c-4580-8aa5-a585abc15607" cachedDefinition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ModuleDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; Name=&quot;Gyro&quot; Manufacturer=&quot;Seeed&quot; Description=&quot;A Gyro module&quot; Type=&quot;Gadgeteer.Modules.Seeed.Gyro&quot; HardwareVersion=&quot;1.0&quot; Image=&quot;C:\Program Files\Seeed\Seeed .NET Gadgeteer SDK\Modules\Gyro\Resources\Image.jpg&quot; BoardWidth=&quot;17.2&quot; BoardHeight=&quot;32.2&quot; MinimumGadgeteerCoreVersion=&quot;2.42.500&quot; HelpUrl=&quot;&quot; UniqueId=&quot;c2140be2-a830-438e-a2ca-980157b4cd9b&quot; InstanceName=&quot;gyro&quot; ModuleSuppliesPower=&quot;false&quot;&gt;&#xD;&#xA;  &lt;Power /&gt;&#xD;&#xA;  &lt;ProvidedSockets /&gt;&#xD;&#xA;  &lt;Assemblies&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;GTM.Seeed.Gyro&quot; /&gt;&#xD;&#xA;  &lt;/Assemblies&gt;&#xD;&#xA;  &lt;LibrariesProvided /&gt;&#xD;&#xA;  &lt;Sockets&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;90&quot; Left=&quot;8.6&quot; Top=&quot;27.7&quot; TypesLabel=&quot;I&quot; ConstructorOrder=&quot;1&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;I&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;8&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;9&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;  &lt;/Sockets&gt;&#xD;&#xA;  &lt;ExtraLibrariesRequired /&gt;&#xD;&#xA;&lt;/ModuleDefinition&gt;" name="gyro" moduleType="Gadgeteer.Modules.Seeed.Gyro" moduleDefinitionId="c2140be2-a830-438e-a2ca-980157b4cd9b">
+        <socketUses>
+          <moduleHasSocketUses Id="19e703aa-ed7c-4221-8f96-45e5e346be0c">
+            <socketUse Id="ddacbdb4-c4d8-4381-81ca-785055391e38" label="I">
+              <socket>
+                <socketUseReferencesSocket Id="4f751ee6-f320-4b2b-92ff-5d7edf78c373">
+                  <socketMoniker Id="971963e1-9cc8-4079-b421-e212d9833572" />
+                </socketUseReferencesSocket>
+              </socket>
+            </socketUse>
+          </moduleHasSocketUses>
+        </socketUses>
+      </module>
+    </gadgeteerModelHasGadgeteerHardware>
+    <gadgeteerModelHasGadgeteerHardware Id="980327c3-ac9f-473f-a6fb-f539e3385188">
+      <module Id="754c9174-7375-4a7b-85dd-6fe12145758a" cachedDefinition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ModuleDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; Name=&quot;Button&quot; Manufacturer=&quot;GHI Electronics&quot; Description=&quot;A Button module with an embedded LED&quot; Type=&quot;Gadgeteer.Modules.GHIElectronics.Button&quot; HardwareVersion=&quot;1.2&quot; Image=&quot;C:\Program Files\GHI Electronics\GHI .NET Gadgeteer SDK\Modules\Button\Resources\Image.jpg&quot; BoardWidth=&quot;22&quot; BoardHeight=&quot;22&quot; MinimumGadgeteerCoreVersion=&quot;2.42.500&quot; HelpUrl=&quot;http://www.ghielectronics.com/catalog/product/274&quot; UniqueId=&quot;c241cd69-3f38-453d-bdc4-5679f4265302&quot; InstanceName=&quot;button&quot; ModuleSuppliesPower=&quot;false&quot;&gt;&#xD;&#xA;  &lt;Power&gt;&#xD;&#xA;    &lt;PowerRequirements Voltage=&quot;3.3&quot;&gt;&#xD;&#xA;      &lt;TypicalCurrent&gt;0.01&lt;/TypicalCurrent&gt;&#xD;&#xA;      &lt;MaximumCurrent&gt;0&lt;/MaximumCurrent&gt;&#xD;&#xA;    &lt;/PowerRequirements&gt;&#xD;&#xA;    &lt;PowerRequirements Voltage=&quot;5&quot;&gt;&#xD;&#xA;      &lt;TypicalCurrent&gt;0&lt;/TypicalCurrent&gt;&#xD;&#xA;      &lt;MaximumCurrent&gt;0&lt;/MaximumCurrent&gt;&#xD;&#xA;    &lt;/PowerRequirements&gt;&#xD;&#xA;  &lt;/Power&gt;&#xD;&#xA;  &lt;ProvidedSockets /&gt;&#xD;&#xA;  &lt;Assemblies&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;GTM.GHIElectronics.Button&quot; /&gt;&#xD;&#xA;  &lt;/Assemblies&gt;&#xD;&#xA;  &lt;LibrariesProvided /&gt;&#xD;&#xA;  &lt;Sockets&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;270&quot; Left=&quot;11.18&quot; Top=&quot;11.53&quot; TypesLabel=&quot;XY&quot; ConstructorOrder=&quot;1&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;X&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;Y&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;4&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;  &lt;/Sockets&gt;&#xD;&#xA;  &lt;ExtraLibrariesRequired /&gt;&#xD;&#xA;&lt;/ModuleDefinition&gt;" name="button" moduleType="Gadgeteer.Modules.GHIElectronics.Button" moduleDefinitionId="c241cd69-3f38-453d-bdc4-5679f4265302">
+        <socketUses>
+          <moduleHasSocketUses Id="8d87f869-8688-41e4-8d9d-4ea003878ada">
+            <socketUse Id="9c67be1a-f126-4e9d-bbde-af21e6c06589" label="XY">
+              <socket>
+                <socketUseReferencesSocket Id="727a7e5b-2bd5-49d0-9203-de828746ceae">
+                  <socketMoniker Id="6722a22e-087b-4d14-be9d-a1910c9c02b9" />
+                </socketUseReferencesSocket>
+              </socket>
+            </socketUse>
+          </moduleHasSocketUses>
+        </socketUses>
+      </module>
+    </gadgeteerModelHasGadgeteerHardware>
+    <gadgeteerModelHasGadgeteerHardware Id="8a2fc455-dbe8-4582-a489-f5f4bdf0a793">
+      <module Id="49a18b4e-a81c-497a-acaa-58f067bf9aa3" cachedDefinition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ModuleDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; Name=&quot;Display_T35&quot; Manufacturer=&quot;GHI Electronics&quot; Description=&quot;A Display_T35 module&quot; Type=&quot;Gadgeteer.Modules.GHIElectronics.Display_T35&quot; HardwareVersion=&quot;1.0&quot; Image=&quot;C:\Program Files\GHI Electronics\GHI .NET Gadgeteer SDK\Modules\Display_T35\Resources\Image.jpg&quot; BoardWidth=&quot;78&quot; BoardHeight=&quot;83&quot; MinimumGadgeteerCoreVersion=&quot;2.42.500&quot; HelpUrl=&quot;http://www.ghielectronics.com/catalog/product/276&quot; UniqueId=&quot;c022815d-9b9d-41d9-ac2d-5444f185d7ca&quot; InstanceName=&quot;display_T35&quot; ModuleSuppliesPower=&quot;false&quot;&gt;&#xD;&#xA;  &lt;Power&gt;&#xD;&#xA;    &lt;PowerRequirements Voltage=&quot;3.3&quot;&gt;&#xD;&#xA;      &lt;TypicalCurrent&gt;0.15&lt;/TypicalCurrent&gt;&#xD;&#xA;      &lt;MaximumCurrent&gt;0.15&lt;/MaximumCurrent&gt;&#xD;&#xA;    &lt;/PowerRequirements&gt;&#xD;&#xA;    &lt;PowerRequirements Voltage=&quot;5&quot;&gt;&#xD;&#xA;      &lt;TypicalCurrent&gt;0&lt;/TypicalCurrent&gt;&#xD;&#xA;      &lt;MaximumCurrent&gt;0&lt;/MaximumCurrent&gt;&#xD;&#xA;    &lt;/PowerRequirements&gt;&#xD;&#xA;  &lt;/Power&gt;&#xD;&#xA;  &lt;ProvidedSockets /&gt;&#xD;&#xA;  &lt;Assemblies&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;GTM.GHIElectronics.Display_T35&quot; /&gt;&#xD;&#xA;  &lt;/Assemblies&gt;&#xD;&#xA;  &lt;LibrariesProvided /&gt;&#xD;&#xA;  &lt;Sockets&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;180&quot; Left=&quot;72.88&quot; Top=&quot;50.07&quot; TypesLabel=&quot;R&quot; ConstructorOrder=&quot;1&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;R&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;4&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;5&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;6&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;7&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;8&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;9&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;180&quot; Left=&quot;72.88&quot; Top=&quot;35.62&quot; TypesLabel=&quot;G&quot; ConstructorOrder=&quot;2&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;G&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;4&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;5&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;6&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;7&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;8&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;9&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;180&quot; Left=&quot;72.88&quot; Top=&quot;21.3&quot; TypesLabel=&quot;B&quot; ConstructorOrder=&quot;3&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;B&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;4&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;5&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;6&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;7&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;8&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;9&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;180&quot; Left=&quot;72.88&quot; Top=&quot;64.51&quot; TypesLabel=&quot;T&quot; ConstructorOrder=&quot;4&quot; Optional=&quot;true&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;T&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;4&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;5&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;6&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;  &lt;/Sockets&gt;&#xD;&#xA;  &lt;ExtraLibrariesRequired /&gt;&#xD;&#xA;&lt;/ModuleDefinition&gt;" name="display" moduleType="Gadgeteer.Modules.GHIElectronics.Display_T35" moduleDefinitionId="c022815d-9b9d-41d9-ac2d-5444f185d7ca">
+        <socketUses>
+          <moduleHasSocketUses Id="bec6cdb5-a54f-4876-bd2c-e2494ee03814">
+            <socketUse Id="542c4371-3b90-467d-a575-c397f3d68f71" label="R">
+              <socket>
+                <socketUseReferencesSocket Id="9c46784c-9984-4ad9-bd9f-01300efcf6c0">
+                  <socketMoniker Id="b43844db-09b8-41f5-bb7a-bbd785c9173f" />
+                </socketUseReferencesSocket>
+              </socket>
+            </socketUse>
+          </moduleHasSocketUses>
+          <moduleHasSocketUses Id="31a1034b-31fa-4646-ad53-6b3792dfded0">
+            <socketUse Id="2461a32d-3725-4cd9-a6be-4e9c17ae3049" label="G">
+              <socket>
+                <socketUseReferencesSocket Id="de2fcaf2-4fb6-4d43-807e-aa1977a9044f">
+                  <socketMoniker Id="673ca9cd-e6dd-465e-9169-5ce0bbaa43df" />
+                </socketUseReferencesSocket>
+              </socket>
+            </socketUse>
+          </moduleHasSocketUses>
+          <moduleHasSocketUses Id="2cedd170-90a3-487d-b699-aaaabbc44cb1">
+            <socketUse Id="fdbb5276-ca4b-42c5-9a5e-afa6e66290b9" label="B">
+              <socket>
+                <socketUseReferencesSocket Id="86bf28f6-5be0-47c1-8405-99432be79d2e">
+                  <socketMoniker Id="9ffc9f35-73ca-4f39-a1ee-7cdea3713ea7" />
+                </socketUseReferencesSocket>
+              </socket>
+            </socketUse>
+          </moduleHasSocketUses>
+          <moduleHasSocketUses Id="d4f04a79-f9fd-44bb-ba8d-366439f1d471">
+            <socketUse Id="bb2d5a5f-8700-4c2b-99cb-48b878ffeb3d" label="T">
+              <socket>
+                <socketUseReferencesSocket Id="e37dcc64-5496-4762-a168-4a62ed198963">
+                  <socketMoniker Id="47af366b-d04f-4961-90e3-03a566b86bb8" />
                 </socketUseReferencesSocket>
               </socket>
             </socketUse>

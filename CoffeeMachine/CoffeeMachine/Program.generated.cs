@@ -15,7 +15,7 @@ namespace CoffeeMachine {
     
     public partial class Program : Gadgeteer.Program {
         
-        /// <summary>The MulticolorLed module using socket 12 of the mainboard.</summary>
+        /// <summary>The MulticolorLed module using socket 11 of the mainboard.</summary>
         private Gadgeteer.Modules.GHIElectronics.MulticolorLed multicolorLed;
         
         /// <summary>The UsbClientDP module using socket 1 of the mainboard.</summary>
@@ -23,6 +23,15 @@ namespace CoffeeMachine {
         
         /// <summary>The WiFi_RS21 (Premium) module using socket 9 of the mainboard.</summary>
         private Gadgeteer.Modules.GHIElectronics.WiFi_RS21 wifi_RS21;
+        
+        /// <summary>The Gyro module using socket 4 of the mainboard.</summary>
+        private Gadgeteer.Modules.Seeed.Gyro gyro;
+        
+        /// <summary>The Button module using socket 8 of the mainboard.</summary>
+        private Gadgeteer.Modules.GHIElectronics.Button button;
+        
+        /// <summary>The Display_T35 module using sockets 14, 13, 12 and 10 of the mainboard.</summary>
+        private Gadgeteer.Modules.GHIElectronics.Display_T35 display;
         
         /// <summary>This property provides access to the Mainboard API. This is normally not necessary for an end user program.</summary>
         protected new static GHIElectronics.Gadgeteer.FEZSpider Mainboard {
@@ -46,9 +55,12 @@ namespace CoffeeMachine {
         }
         
         private void InitializeModules() {
-            this.multicolorLed = new GTM.GHIElectronics.MulticolorLed(12);
+            this.multicolorLed = new GTM.GHIElectronics.MulticolorLed(11);
             this.usbClientDP = new GTM.GHIElectronics.UsbClientDP(1);
             this.wifi_RS21 = new GTM.GHIElectronics.WiFi_RS21(9);
+            this.gyro = new GTM.Seeed.Gyro(4);
+            this.button = new GTM.GHIElectronics.Button(8);
+            this.display = new GTM.GHIElectronics.Display_T35(14, 13, 12, 10);
         }
     }
 }
